@@ -17,6 +17,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -34,4 +35,17 @@ header {
   color: #fff;
   text-shadow: 0 0 4px #61dafb, 0 0 11px #61dafb, 0 0 19px #61dafb,
     0 0 40px #61dafb, 0 0 80px #61dafb;
+}
+
+button {
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+button:hover {
+  cursor: pointer;
 }
