@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+
+import StreamCreate from './components/streams/StreamCreate';
+import StreamDelete from './components/streams/StreamDelete';
+import StreamEdit from './components/streams/StreamEdit';
+import StreamList from './components/streams/StreamList';
+import StreamShow from './components/streams/StreamShow';
+import Header from './components/Header';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header className="App-header" />
+        <section>
+          <Switch>
+            <Route path="/" exact component={StreamList} />
+            <Route path="/streams/new" exact component={StreamCreate} />
+            <Route path="/streams/edit" exact component={StreamEdit} />
+            <Route path="/streams/delete" exact component={StreamDelete} />
+            <Route path="/streams/show" exact component={StreamShow} />
+            <Redirect to="/" />
+          </Switch>
+        </section>
+      </div>
+    </BrowserRouter>
   );
 }
 
